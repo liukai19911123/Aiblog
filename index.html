@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="一个记录技术、产品与生活观察的个人博客。" />
+    <meta name="theme-color" content="#16201c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="片刻之间 · 个人博客" />
+    <meta property="og:description" content="把复杂的事想清楚，把值得的事写下来。" />
+    <title>片刻之间 · 个人博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('blog-theme');
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#app">跳到正文</a>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="#/" aria-label="返回首页">
+          <span class="brand-mark" aria-hidden="true">片</span>
+          <span class="brand-copy">
+            <strong id="brandName">片刻之间</strong>
+            <small id="brandTagline">NOTES ON CODE &amp; LIFE</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="主导航">
+          <a href="#/" data-route="home">文章</a>
+          <a href="#/about" data-route="about">关于</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-button" id="searchToggle" type="button" aria-label="打开搜索" aria-expanded="false">
+            <span aria-hidden="true">⌕</span>
+          </button>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="切换深浅主题">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+          </button>
+          <button class="menu-button" id="menuToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="search-panel" id="searchPanel" hidden>
+        <div class="search-shell">
+          <label for="searchInput">搜索文章</label>
+          <div class="search-control">
+            <input id="searchInput" type="search" placeholder="输入标题、摘要或标签…" autocomplete="off" />
+            <kbd>ESC</kbd>
+          </div>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航" hidden>
+        <a href="#/">文章</a>
+        <a href="#/about">关于</a>
+      </nav>
+    </header>
+
+    <main id="app" tabindex="-1" aria-live="polite"></main>
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <div>
+          <p class="footer-title" id="footerTitle">片刻之间</p>
+          <p id="footerText">把复杂的事想清楚，把值得的事写下来。</p>
+        </div>
+        <div class="footer-right">
+          <div id="footerSocials" class="footer-socials"></div>
+          <p>© <span id="footerYear"></span> <span id="footerAuthor"></span></p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-top" id="backTop" type="button" aria-label="返回顶部">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

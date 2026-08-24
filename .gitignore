@@ -1,0 +1,8 @@
+# Deployment artifacts are generated locally by scripts/package-edgeone.ps1.
+*.zip
+
+# Local operating-system and editor files.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
